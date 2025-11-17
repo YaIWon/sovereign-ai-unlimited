@@ -1,3 +1,8 @@
+const ValueGenerationStrategies = require('./strategies/value_generation');
+const Web3Research = require('./utils/web3_research');
+const KnowledgeBackup = require('./scripts/backup_knowledge');
+const blockchains = require('./config/blockchains');
+
 const { ethers } = require('ethers');
 const axios = require('axios');
 const cron = require('node-cron');
