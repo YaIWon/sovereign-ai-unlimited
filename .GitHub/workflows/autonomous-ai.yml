@@ -1,0 +1,36 @@
+name: Autonomous Web3 AI
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  autonomous-operation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Start Autonomous AI
+      run: |
+        npm start &
+        echo $! > ai.pid
+        sleep 300  # Run for 5 minutes in workflow
+    
+    - name: Upload knowledge base
+      uses: actions/upload-artifact@v3
+      with:
+        name: knowledge-base
+        path: knowledge_base.json
