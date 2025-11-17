@@ -1,0 +1,25 @@
+{
+  "name": "sovereign-ai-unlimited",
+  "version": "3.0.0",
+  "description": "Autonomous Web3 AI that creates value from nothing",
+  "main": "autonomous_ai.js",
+  "scripts": {
+    "start": "node autonomous_ai.js",
+    "dev": "nodemon autonomous_ai.js",
+    "monitor": "node monitor.js",
+    "forever": "forever autonomous_ai.js"
+  },
+  "dependencies": {
+    "ethers": "^6.8.0",
+    "axios": "^1.5.0",
+    "web3": "^4.2.0",
+    "node-cron": "^3.0.2",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Sovereign AI Unlimited",
+  "license": "MIT"
+}
