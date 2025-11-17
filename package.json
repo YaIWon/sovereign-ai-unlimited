@@ -7,6 +7,8 @@
     "start": "node autonomous_ai.js",
     "dev": "nodemon autonomous_ai.js",
     "monitor": "node monitor.js",
+    "backup": "node scripts/backup_knowledge.js",
+    "health": "node -e \"require('./autonomous_ai.js').systemHealthCheck()\"",
     "forever": "forever autonomous_ai.js"
   },
   "dependencies": {
